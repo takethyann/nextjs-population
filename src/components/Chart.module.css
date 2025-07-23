@@ -1,0 +1,84 @@
+.chartContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+
+
+
+.title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.graphTitle {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.checkboxArea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.categoryArea {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.grapArea {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid white;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.checkboxWrapper input[type="checkbox"],
+.checkboxWrapper input[type='radio'] {
+    accent-color: white;
+    background-color: black;
+    border: 1px solid white;
+}
+
+.checkboxWrapper label {
+    color: white;
+    margin-right: 1rem;
+}
+
+
+@media (max-width: 640px) {
+.graphTitle {
+    font-size: 1.4rem;
+}
+
+.graphTitle {
+    font-size: 1.1rem;
+}
+
+.checkboxArea {
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+.chartContainer{
+    width: 100%;
+}

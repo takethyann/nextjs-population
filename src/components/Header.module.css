@@ -1,0 +1,44 @@
+.header {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    position: sticky;
+    top: 20;
+    bottom: 20;
+    z-index: 10;
+    background-color: white;
+    border-bottom: 1px solid #d1d5db;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    width: 100%;
+    display: block;
+}
+
+.prefectureSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.checkboxGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    gap: 8px;
+    justify-content: center;
+}
+
+.checkboxItem {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

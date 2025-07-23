@@ -1,0 +1,18 @@
+.footer {
+  background-color: #f3f4f6; /* bg-gray-100 */
+  margin-top: auto;
+}
+
+.inner {
+  max-width: 64rem; /* max-w-4xl */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.5rem;  /* py-6 */
+  padding-bottom: 1.5rem;
+  padding-left: 1rem;   /* px-4 */
+  padding-right: 1rem;
+  text-align: center;
+  font-size: 0.875rem;  /* text-sm */
+  color: #4b5563;       /* text-gray-600 */
+}
