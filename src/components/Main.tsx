@@ -23,6 +23,14 @@ interface MainProps {
   onChange: (prefs: PopulationData[]) => void;
 }
 
+interface PopulationCategory {
+  label: string;
+  data: {
+    year: number;
+    value: number;
+  }[];
+}
+
 
 export default function Main({ onChange}: MainProps){
   const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
@@ -72,11 +80,11 @@ export default function Main({ onChange}: MainProps){
         );
 
           const json = await res.json();
-          const result = json.result.data;
-          const total = result.find((r: any) => r.label === '総人口');
-          const young = result.find((r: any) => r.label === '年少人口');
-          const working = result.find((r: any) => r.label === '生産年齢人口');
-          const elderly = result.find((r: any) => r.label === '老年人口');
+          const result: PopulationCategory[] = json.result.data;
+          const total = result.find((r) => r.label === '総人口');
+          const young = result.find((r) => r.label === '年少人口');
+          const working = result.find((r) => r.label === '生産年齢人口');
+          const elderly = result.find((r) => r.label === '老年人口');
 
 
 
