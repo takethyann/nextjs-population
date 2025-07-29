@@ -18,6 +18,7 @@ import { useEffect, useState } from 'react';
 interface ChartProps {
   data: PopulationData[];
   category: 'total' | 'young' | 'working' | 'elderly';
+  setCategory: (category: 'total' | 'young' | 'working' | 'elderly') => void;
 }
 
 const categoryLabelMap = {
@@ -30,7 +31,7 @@ const categoryLabelMap = {
 
 
 
-export default function Chart({ data, category }: ChartProps) {
+export default function Chart({ data, category, setCategory }: ChartProps) {
   const [isMobile, setIsMobile] = useState(false);
 
   // モバイル判定（幅が768px未満で true）
@@ -40,7 +41,7 @@ export default function Chart({ data, category }: ChartProps) {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-  if (data.length === 0) return <p>グラフに表示するデータがありません</p>;
+  if (data.length === 0) return <p>No data to display</p>;
 
   // 年ごとのデータに整形（横軸：年、各系列：都道府県）
   const merged = data[0].data.map((_, i) => {
@@ -56,6 +57,22 @@ export default function Chart({ data, category }: ChartProps) {
   return (
     <div className={styles.chartContainer}>
       <h2 className={styles.graphTitle}>人口データグラフ</h2>
+
+      <div className={styles.radioGroup}>
+        {(Object.entries(categoryLabelMap)  as [keyof typeof categoryLabelMap, string][]).map(([key, label]) => (
+          <label key={key} className={styles.radioLabel}>
+            <input
+              type="radio"
+              name="category"
+              value={key}
+              checked={category === key}
+              onChange={() => setCategory(key)}
+            />
+            {label}
+          </label>
+        ))}
+      </div>
+      
       <div className={styles.graphArea}>
         <div className={styles.inner}>
     <ResponsiveContainer width="100%" height={400}>

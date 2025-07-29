@@ -47,43 +47,9 @@ export default function Page() {
       <main className={styles.main}>
         <Main  prefectures={prefectures} onChange={setSelectedPrefs} />
         
-        <div style={{ margin: '1rem 0' }}>
-          <label>
-            <input
-              type="radio"
-              value="total"
-              checked={category === 'total'}
-              onChange={() => setCategory('total')}
-            /> 総人口
-          </label>
-          <label style={{ marginLeft: '1rem' }}>
-            <input
-              type="radio"
-              value="young"
-              checked={category === 'young'}
-              onChange={() => setCategory('young')}
-            /> 年少人口
-          </label>
-          <label style={{ marginLeft: '1rem' }}>
-            <input
-              type="radio"
-              value="working"
-              checked={category === 'working'}
-              onChange={() => setCategory('working')}
-            /> 生産年齢人口
-          </label>
-          <label style={{ marginLeft: '1rem' }}>
-            <input
-              type="radio"
-              value="elderly"
-              checked={category === 'elderly'}
-              onChange={() => setCategory('elderly')}
-            /> 老年人口
-          </label>
-        </div>
 
       
-        <Chart data={selectedPrefs} category={category}/>
+        <Chart data={selectedPrefs} category={category} setCategory={setCategory}/>
       </main>
 
       <Footer />
